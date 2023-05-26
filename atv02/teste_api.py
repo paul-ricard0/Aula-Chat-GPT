@@ -1,21 +1,23 @@
-import dotenv 
+import dotenv
 import os 
 import openai # Importando a lib da openAI
 
 dotenv.load_dotenv()
-openai.api_key = os.getenv("KEY") # Informando nossa chave de acesso
-
+openai.api_key = os.getenv("OPENAI_API_KEY") # Informando nossa chave de acesso
 
 prompt = "Qual maior time de Minas Gerais?"
-prompt2 = "Qual seu nome?" 
 
 response = openai.Completion.create(
-    model="text-davinci-003",
-    prompt= prompt2,
-    temperature=0.7,
-    max_tokens= 2048,
-    n=1, 
-    stop=None 
-)['choices'][0]['text'].strip()
+    model="text-davinci-003", # o mecanimos da i.a
+    prompt= prompt,
+    temperature=0.7, # entre 0 e 2. Valores mais altos como 1,8 tornarão a saída mais aleatória, enquanto valores mais baixos como 0,2 a tornarão mais focada e determinística.
+    max_tokens= 100, # Quantidade de retorno (Tokens, padrao 16)
+    n=1, # Quantos respostas vão ser geradas
+    stop=None # String ou array(4), com palavras de parada caso ele retorne alguma
+)
 
-print(response)
+# frequency_penalty = "Caso esteja dando muita resposta repetida, passar com 2"
+
+resposta = response['choices'][0]['text'].strip()
+
+print(resposta)
