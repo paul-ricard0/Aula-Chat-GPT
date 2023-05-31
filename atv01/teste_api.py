@@ -1,9 +1,7 @@
-import dotenv
-import os 
+
 import openai # Importando a lib da openAI
 
-dotenv.load_dotenv()
-openai.api_key = os.getenv("OPENAI_API_KEY") # Informando nossa chave de acesso
+openai.api_key = "KEY" # Informando nossa chave de acesso
 
 prompt = "Qual maior time de Minas Gerais?"
 

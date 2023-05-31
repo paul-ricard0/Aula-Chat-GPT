@@ -1,5 +1,0 @@
-Um pipeline de dados é uma sequência de etapas que processam dados, começando com a ingestão de dados e terminando com um destino para a saída. 
-Os pipelines de dados consistem em três elementos principais: uma fonte, etapas de processamento e um destino. 
-Esses pipelines permitem o fluxo de dados de um aplicativo para um Data Warehouse, de um Data Lake para um banco de dados 
-analítico ou para um sistema de processamento
- de pagamentos. Em alguns casos, etapas independentes podem ser executadas em paralelo.

@@ -1,4 +1,3 @@
-import os
 import openai
 import requests
 
@@ -9,7 +8,7 @@ def save_image_from_url(image_url, save_path):
     with open(save_path, "wb") as f:
         f.write(response.content)
 
-openai.api_key = os.getenv("OPENAI_API_KEY")
+openai.api_key = "KEY"
 
 prompt = "Leão com espada de cavaleiro"
 

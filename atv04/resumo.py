@@ -1,8 +1,6 @@
-import os, dotenv
 import openai
 
-dotenv.load_dotenv()
-openai.api_key = os.getenv("OPENAI_API_KEY")
+openai.api_key = "KEY"
 
 def read_file(file_path: str) -> str:
     with open(file_path, 'r', encoding='utf-8') as file:
@@ -26,7 +24,7 @@ def resumir_texto(text: str) -> str:
     return response['choices'][0]['text'].strip()
 
 if __name__ == '__main__':
-    file = r'.\arquivos\texto_original.txt'
+    file = r'atv04\texto_original.txt'
     texto = read_file(file)
     
     texto_resumido = resumir_texto(texto)

@@ -1,8 +1,6 @@
-import os, dotenv
 import openai
 
-dotenv.load_dotenv()
-openai.api_key = os.getenv("OPENAI_API_KEY")
+openai.api_key = "KEY"
 
 def read_file(file_path):
     with open(file_path, 'r', encoding='utf-8') as f:
@@ -28,10 +26,10 @@ def translate(text: str, source_lang: str, target_lang: str) -> str:
 
 if __name__ == '__main__':
     idioma_original = 'Inglês'
-    caminho_arquivo_original  = r'.\arquivos\texto_original.txt'
+    caminho_arquivo_original  = r'atv02\texto_original.txt'
 
     idioma_novo = 'Português'
-    caminho_arquivo_novo = r'.\arquivos\texto_traduzido.txt'
+    caminho_arquivo_novo = r'atv02\texto_traduzido.txt'
 
     text = read_file(caminho_arquivo_original)
     
